@@ -11,9 +11,12 @@ app.use(express.urlencoded({extended:true, limit:"16kb"}));
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(cors());
-app.use(express.static("public"));
 
 
+//routes
+import router from "./routes/users.routes.js";
+
+app.use("/api/v1/users", router);
 
 
-export default app;
+export {app} ;
